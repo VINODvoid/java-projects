@@ -8,7 +8,7 @@ This repository contains a collection of core Java programs demonstrating OOP co
 Basic banking functionalities including account creation, deposits, withdrawals, and balance checking.
 
 **Output:**
-![Bank Output](output_images/bank_output.png)
+![Bank Output](output_images/Bank.png)
 
 ---
 
@@ -16,7 +16,7 @@ Basic banking functionalities including account creation, deposits, withdrawals,
 Simulates an online store with products, cart system, and order summary.
 
 **Output:**
-![E-Commerce Output](output_images/ecommerce_output.png)
+![E-Commerce Output](output_images/E-commerce.png)
 
 ---
 
@@ -40,13 +40,10 @@ Tracks teams, player stats, and match results in a cricket tournament.
 Manages player registrations, team formation, and game status updates.
 
 **Output:**
-![Player Management Output](output_images/Player.png)
+![Player Management Output](output_images/player.png)
 
 ---
-### E-Commerce System
-Takes different category of products and displays the products.
-**Output**
-![E-Commerce System Output](output_images/E-commerce.png) 
+
 
 ## 🚀 Getting Started
 
