@@ -8,6 +8,14 @@ public class CatalogManager {
     {
         catalog.put(product.ID, product);
     }
+    public Product getProductByName(String name) {
+        for (Product p : catalog.values()) {
+            if (p.getName().equalsIgnoreCase(name)) {
+                return p;
+            }
+        }
+        return null;
+    }
     public void displayProducts()
     {
         System.out.println("Products Catalog");
