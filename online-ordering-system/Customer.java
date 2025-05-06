@@ -1,6 +1,8 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 public class Customer {
     private String name;
@@ -47,22 +49,30 @@ public class Customer {
         System.out.println(count + " " + product.getName() + " removed from cart.");
         
     }
-    public void viewCart()
-    {
-        if(cart.isEmpty())
-        {
-            System.out.println("Cart is Empty");
-
-        }
-        else{
-            System.out.println(name +" 's Cart : ");
-            for(Product product : cart)
-            {
-                System.out.println(product);
-            }
-        }
-        
+    public void viewCart() {
+    if (cart.isEmpty()) {
+        System.out.println("Cart is Empty");
+        return;
     }
+
+    System.out.println(name + "'s Cart:");
+
+    // Map to track quantity of each product
+    Map<String, Integer> itemCount = new HashMap<>();
+    Map<String, Double> itemPrice = new HashMap<>();
+
+    for (Product product : cart) {
+        itemCount.put(product.getName(), itemCount.getOrDefault(product.getName(), 0) + 1);
+        itemPrice.put(product.getName(), product.getPrice());
+    }
+
+    for (String productName : itemCount.keySet()) {
+        int quantity = itemCount.get(productName);
+        double price = itemPrice.get(productName);
+        System.out.printf("%s (x%d) - ₹%.2f each\n", productName, quantity, price);
+    }
+}
+
     public void placeOrder()
     {
         if(cart.isEmpty())
@@ -76,7 +86,8 @@ public class Customer {
             {
                 total +=product.getPrice();
             }
-            System.out.println("Total Amount is "+total);
+            System.out.printf("Total Amount is %.2f",total);
+            System.out.println();
             cart.clear();
         }
     }
